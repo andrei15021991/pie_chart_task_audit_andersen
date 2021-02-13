@@ -33,13 +33,13 @@ public class PieChartController {
     }
 
     @PostMapping
-    public PieChartDTO addNew(@RequestBody @Valid PieChart pieChart) {
-        return pieChartService.addNewPieChart(pieChart);
+    public PieChartDTO addNew(@RequestBody @Valid PieChartDTO pieChartDTO) {
+        return pieChartService.addNewPieChart(pieChartDTO);
     }
 
     @PutMapping
-    public PieChartDTO updateExistingObject(@RequestBody @Valid PieChart pieChart) {
-        return pieChartService.updatePieChart(pieChart);
+    public PieChartDTO updateExistingObject(@RequestBody @Valid PieChartDTO pieChartDTO) {
+        return pieChartService.updatePieChart(pieChartDTO);
     }
 
     @DeleteMapping("{id}")

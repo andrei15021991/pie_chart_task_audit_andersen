@@ -2,7 +2,6 @@ package com.andersen.piechart.service;
 
 import com.andersen.piechart.dto.PieChartDTO;
 import com.andersen.piechart.entity.PieChart;
-import com.andersen.piechart.exception.PieChartException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
@@ -12,9 +11,9 @@ public interface PieChartService {
 
     PieChartDTO getPieChartById(long id);
 
-    PieChartDTO addNewPieChart(PieChart pieChart);
+    PieChartDTO addNewPieChart(PieChartDTO pieChartDTO);
 
-    PieChartDTO updatePieChart(PieChart pieChart);
+    PieChartDTO updatePieChart(PieChartDTO pieChartDTO);
 
     Long deletePieChartById(long id);
 }

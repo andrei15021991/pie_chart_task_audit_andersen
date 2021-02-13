@@ -35,22 +35,22 @@ public class PieChartServiceImpl implements PieChartService {
     @Transactional(readOnly = true)
     @Override
     public PieChartDTO getPieChartById(long id) {
-        PieChart pieChart = pieChartRepository.findById(id).orElseThrow(() -> new PieChartException("wrong user id " + id));
+        PieChart pieChart = pieChartRepository.findById(id).orElseThrow(() -> new PieChartException("wrong pie-chart id " + id));
         return serviceConverterToDTO.convertToPieChartDTO(pieChart);
     }
 
     @Transactional
     @Override
-    public PieChartDTO addNewPieChart(PieChart pieChart) {
-        serviceValidation.validatePieChartObject(pieChart);
+    public PieChartDTO addNewPieChart(PieChartDTO pieChartDTO) {
+        PieChart pieChart = serviceConverterToDTO.convertFromPieChartDTO(pieChartDTO);
         PieChart newPieChart = pieChartRepository.save(pieChart);
-        return serviceConverterToDTO.convertToPieChartDTO(pieChart);
+        return serviceConverterToDTO.convertToPieChartDTO(newPieChart);
     }
 
     @Transactional
     @Override
-    public PieChartDTO updatePieChart(PieChart pieChart) {
-        serviceValidation.validatePieChartObject(pieChart);
+    public PieChartDTO updatePieChart(PieChartDTO pieChartDTO) {
+        PieChart pieChart = serviceConverterToDTO.convertFromPieChartDTO(pieChartDTO);
         PieChart update = pieChartRepository.save(pieChart);
         return serviceConverterToDTO.convertToPieChartDTO(update);
     }
