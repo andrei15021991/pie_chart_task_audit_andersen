@@ -1,5 +1,6 @@
 package com.andersen.piechart.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.validator.constraints.Length;
@@ -12,6 +13,7 @@ import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
 @NoArgsConstructor
+@AllArgsConstructor
 @Data
 @Entity
 @Table(name = "data_table")
