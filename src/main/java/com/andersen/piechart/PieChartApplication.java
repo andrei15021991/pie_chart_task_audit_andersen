@@ -18,25 +18,26 @@ public class PieChartApplication {
         SpringApplication.run(PieChartApplication.class, args);
     }
 
-    @Bean
-    CommandLineRunner run(PieChartRepository pieChartRepository) {
-        return args -> IntStream.rangeClosed(1, 60).forEach(i -> {
-            PieChart pieChart = new PieChart();
-            pieChart.setTitle("title " + i);
-            pieChart.setDescription("description " + i);
-            pieChart.setInfoIconUrl("http://url" + i);
+    /**
+     @Bean CommandLineRunner run(PieChartRepository pieChartRepository) {
+     return args -> IntStream.rangeClosed(1, 60).forEach(i -> {
+     PieChart pieChart = new PieChart();
+     pieChart.setTitle("title " + i);
+     pieChart.setDescription("description " + i);
+     pieChart.setInfoIconUrl("http://url" + i);
 
-            DataTable dataTable1 = new DataTable();
-            dataTable1.setItem("item " + i);
-            dataTable1.setValue((double) i);
+     DataTable dataTable1 = new DataTable();
+     dataTable1.setItem("item " + i);
+     dataTable1.setValue((double) i);
 
-            DataTable dataTable2 = new DataTable();
-            dataTable2.setItem("item " + i);
-            dataTable2.setValue((double) i);
+     DataTable dataTable2 = new DataTable();
+     dataTable2.setItem("item " + i);
+     dataTable2.setValue((double) i);
 
-            pieChart.setDataTables(Arrays.asList(dataTable1, dataTable2));
+     pieChart.setDataTables(Arrays.asList(dataTable1, dataTable2));
 
-            pieChartRepository.save(pieChart);
-        });
-    }
+     pieChartRepository.save(pieChart);
+     });
+     }
+     */
 }
